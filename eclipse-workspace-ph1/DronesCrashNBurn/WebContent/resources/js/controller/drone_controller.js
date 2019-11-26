@@ -2,11 +2,9 @@
 
 angular
 		.module('myApp')
-		.controller(
-				'DroneController',
-				[
-						'$scope',
-						'DroneService',
+		.controller('DroneController',
+				['$scope','DroneService',
+
 						function($scope, DroneService) {
 							var self = this;
 							self.drone = {
@@ -18,6 +16,7 @@ angular
 								droneStatus : '',
 								droneImage : 'future feature'
 							};
+
 							self.drones = [];
 
 							self.remove = remove;
@@ -31,14 +30,11 @@ angular
 													self.drones = d;
 												},
 												function(errResponse) {
-													console
-															.error('Error while fetching Drones');
+													console.error('Error while fetching Drones');
 												});
 							}
 
 							function deleteDrone(id) {
-								console.log("inside deleteDroneXX JS ctrl");
-								console.log(id);
 								DroneService.deleteDrone(id)
 										.then(fetchAllDrones,
 												function(errResponse) {
@@ -47,14 +43,9 @@ angular
 							}
 
 							function remove(id) {
-								console.log('droneId to be deleted');
-								console.log(id);
 								if (self.drone.id === id) {
-									console
-											.log("js ctrl remove at reset point");
 									reset();
 								}
-								console.log("js ctrl remove at deletee point");
 								deleteDrone(id);
 							}
 

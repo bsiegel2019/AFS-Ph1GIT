@@ -20,6 +20,11 @@ public class DroneController {
 	@Autowired
 	DroneService droneService;
 
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String getIndexPage() {
+		return "index";
+	}
+
 	@RequestMapping(value = "/droneManagement", method = RequestMethod.GET)
 	public ModelAndView showForm() {
 		return new ModelAndView("droneManagement", "drone", droneService.findAllDrones());

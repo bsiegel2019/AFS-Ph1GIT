@@ -30,16 +30,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="dr in ctrl.drones">
-							<td><span ng-bind="dr.droneId"></span></td>
-							<td><span ng-bind="dr.droneOwnerName"></span></td>
-							<td><span ng-bind="dr.droneName"></span></td>
-							<td><span ng-bind="dr.droneType"></span></td>
-							<td><span ng-bind="dr.droneSpan"></span></td>
-							<td><span ng-bind="dr.droneStatus"></span></td>
-							<td><span ng-bind="dr.droneImage"></span></td>
+						<tr ng-repeat="drone in ctrl.drones">
+							<td><span ng-bind="drone.droneId"></span></td>
+							<td><span ng-bind="drone.droneOwnerName"></span></td>
+							<td><span ng-bind="drone.droneName"></span></td>
+							<td><span ng-bind="drone.droneType"></span></td>
+							<td><span ng-bind="drone.droneSpan"></span></td>
+							<td><span ng-bind="drone.droneStatus"></span></td>
+							<td><span ng-bind="drone.droneImage"></span></td>
 							<td>
-								<button type="button" ng-click="ctrl.remove(dr.droneId)"
+								<button type="button" ng-click="ctrl.remove(drone.droneId)"
 									class="btn btn-danger custom-width">Remove</button>
 							</td>
 						</tr>

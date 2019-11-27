@@ -27,16 +27,18 @@ angular.module('myApp')
 								DroneService.fetchAllDrones()
 										.then(function(d) {
 													self.drones = d;
-												},
-												function(errResponse) {
-													console.error('Error while fetching Drones');
+												})
+										.catch(function(errResponse) {
+												console.error('Error while fetching Drones');
 												});
 							}
 
 							function deleteDrones(id) {
+								console.log("X1");
+								console.log(DroneService.fetchAllDrones());
+								console.log(id);
 								DroneService.deleteDrones(id)
-										.then(fetchAllDrones,
-												function(errResponse) {
+										.then(fetchAllDrones, function(errResponse) {
 													console.error('Error while deleting Drone');
 												});
 							}

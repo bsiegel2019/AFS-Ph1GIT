@@ -48,7 +48,9 @@ public class DroneController {
 		model.addAttribute("droneSpan", drone.getDroneSpan());
 		model.addAttribute("droneStatus", drone.getDroneStatus());
 		model.addAttribute("droneImage", drone.getDroneImage());
+		System.out.println("1 BEFORE=" + droneService.findAllDrones().size());
 		droneService.addDrone(drone);
+		System.out.println("1  AFTER=" + droneService.findAllDrones().size());
 		return "droneConfirmation";
 	}
 

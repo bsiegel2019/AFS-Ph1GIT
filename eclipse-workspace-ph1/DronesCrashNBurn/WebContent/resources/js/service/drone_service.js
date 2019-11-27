@@ -2,6 +2,8 @@
 
 angular.module('myApp').factory('DroneService', ['$http', function($http){
 
+		console.log("ERK!");
+		
      var BASE_REST_URI='/DronesCrashNBurn/drones';
 
     var factory = {
@@ -22,16 +24,14 @@ angular.module('myApp').factory('DroneService', ['$http', function($http){
     }
    
     function deleteDrones(id) {
+    	console.log("X2");
         return $http.delete(BASE_REST_URI + "/" + id)
-            .then(
-            function (response) {
+            .then(function (response) {
                 return response.data;
-            },
-            function(errResponse){
+            }).catch( function(errResponse){
                 console.error('Error while deleting Drone');
                 console.error(error);
-            }
-        );
+            });
     }
      
 }]);

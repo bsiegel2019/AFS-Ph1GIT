@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-		.module('myApp')
+angular.module('myApp')
 		.controller('DroneController',
 				['$scope','DroneService',
 
@@ -14,7 +13,7 @@ angular
 								droneType : '',
 								droneSpan : '',
 								droneStatus : '',
-								droneImage : 'future feature'
+								droneImage : 'planned future feature'
 							};
 
 							self.drones = [];
@@ -34,8 +33,8 @@ angular
 												});
 							}
 
-							function deleteDrone(id) {
-								DroneService.deleteDrone(id)
+							function deleteDrones(id) {
+								DroneService.deleteDrones(id)
 										.then(fetchAllDrones,
 												function(errResponse) {
 													console.error('Error while deleting Drone');
@@ -46,7 +45,7 @@ angular
 								if (self.drone.id === id) {
 									reset();
 								}
-								deleteDrone(id);
+								deleteDrones(id);
 							}
 
 							function reset() {
@@ -57,7 +56,7 @@ angular
 									droneType : '',
 									droneSpan : '',
 									droneStatus : '',
-									droneImage : 'future feature'
+									droneImage : 'TBD'
 								};
 								$scope.myForm.$setPristine(); // reset Form
 							}

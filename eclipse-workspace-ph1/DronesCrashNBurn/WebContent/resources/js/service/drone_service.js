@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('myApp').factory('DroneService', ['$http', '$q', function($http, $q){
+angular.module('myApp').factory('DroneService', ['$http', function($http){
 
      var BASE_REST_URI='/DronesCrashNBurn/drones';
 
     var factory = {
         fetchAllDrones: fetchAllDrones,
-        deleteDrone:deleteDrone
+        deleteDrones:deleteDrones
    };
 
     return factory;
@@ -21,14 +21,10 @@ angular.module('myApp').factory('DroneService', ['$http', '$q', function($http, 
         });
     }
    
-    function deleteDrone(id) {
-		console.log("inside deleteDrone JS serivce");
-		console.log(id);
+    function deleteDrones(id) {
         return $http.delete(BASE_REST_URI + "/" + id)
             .then(
             function (response) {
-        		console.log("inside deleteDrone JS serivce inner delete function");
-    			console.log(response.data);
                 return response.data;
             },
             function(errResponse){

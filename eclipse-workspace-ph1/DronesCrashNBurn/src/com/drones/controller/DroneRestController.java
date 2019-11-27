@@ -33,7 +33,7 @@ public class DroneRestController {
 
 	// ------------------- Delete a Drone --------------
 	@RequestMapping(value = "/drones/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Drone> deleteDrone(@PathVariable("id") Long id) {
+	public ResponseEntity<Drone> deleteDrones(@PathVariable("id") Long id) {
 
 		Drone drone = droneService.findDroneById(id);
 

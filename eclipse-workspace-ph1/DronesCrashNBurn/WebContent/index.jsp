@@ -18,7 +18,7 @@ body {
 		<h4>
 			<a href="droneManagement">Click here for Drone Fun!</a>
 		</h4>
-		<h6>remove this demo mssg</h6>
+		<h6>remove this demo mssg BANG BANG BOOM</h6>
 	</div>
 
 	<div>

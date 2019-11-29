@@ -1,3 +1,5 @@
+(function() {
+//IIFE
 'use strict';
 
 angular.module('myApp')
@@ -34,9 +36,6 @@ angular.module('myApp')
 							}
 
 							function deleteDrones(id) {
-								console.log("X1");
-								console.log(DroneService.fetchAllDrones());
-								console.log(id);
 								DroneService.deleteDrones(id)
 										.then(fetchAllDrones, function(errResponse) {
 													console.error('Error while deleting Drone');
@@ -64,3 +63,5 @@ angular.module('myApp')
 							}
 
 						} ]);
+
+})();
